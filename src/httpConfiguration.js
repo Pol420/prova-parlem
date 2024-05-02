@@ -1,10 +1,10 @@
 import axios from 'axios'
 
 /*
-  hardcodejada la url aquí, però idealment s'utilitzaria una
-  variable d'entorn com "import.meta.env.VITE_SERVER_BASE_URL"
+  es configura la URL del servidor amb una variable d'entorn
+  definida al fitxer .env (o la corresponent configuració al host en producció)
 */
-export const baseURL = 'http://127.0.0.1:3001/'
+export const baseURL = import.meta.env.VITE_SERVER_URL
 
 export const http = { // funcions http incloses globalment a la app a src/main.js
   async get(url, config = {}) {
